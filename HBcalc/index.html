@@ -1,8 +1,23 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <style>
+        table {
+            width: 40%;
+            border: 1px solid;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .tablerow {
+            text-align: right;
+            border: 1px solid;
+        }
+        .tableheader {
+            text-align: center;
+        }
+    </style>
     <meta charset="utf-8" />
-    <title>Hayden Boone's Calculator</title>
+    <title>Hayden Boones Calculator</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,8 +34,40 @@
 <body>
     <panel id="main">
         <!--The elements of the calculator go inside the main panel-->
-
         <!--title text centered here-->
+
+        <h1 style="text-align:center">Hayden Boones Calculator</h1>
+
+        <table>
+            <tr class="tableheader">
+                <th>number</th>
+                <th>operation</th>
+                <th>number</th>
+                <th>equals</th>
+                <th>answer</th>
+            </tr>
+            <tr class="tablerow">
+                <td> <input type="number" id="box4" data-bind="value: in1" /></td>
+                <td>
+                    <select id="2box" >
+
+                        <option value="+">+</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                        <option value="-">-</option>
+                    </select>
+                </td>
+                <td><input type="number" id="1box" data-bind="value:in2" /></td>
+                <td>
+                    <button type="button" id="equals" data-bind="click: the1">=</button>
+
+                </td>
+                <td><input type="number" id="box3" data-bind="value:result" /></td>
+            </tr>
+
+        </table>
+
+
 
 
         <!--Input text boxes, select-option and buttons go here-->
