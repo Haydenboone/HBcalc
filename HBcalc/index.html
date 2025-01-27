@@ -1,6 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="private, max-age=0, no-cache" />
+    <meta HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE" />
+    <meta HTTP-EQUIV="EXPIRES" CONTENT="0" />
     <style>
         table {
             width: 40%;
@@ -8,10 +11,15 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .tablerow {
+            border: 1px;
             text-align: right;
-            border: 1px solid;
+            border-left: solid;
+            border-right: solid;
+            border-top: dashed
         }
+
         .tableheader {
             text-align: center;
         }
@@ -23,9 +31,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="./Content/font-awesome.min.css" />
     <link rel="stylesheet" href="./Content/bootstrap.min.css" />
-    <script src="Scripts/jquery-3.7.1.min.js"></script>
-    <script src="Scripts/jquery-ui-1.14.1.min.js"></script>
-    <script src="Scripts/knockout-3.5.1.js"></script>
+    <script src="./Scripts/jquery-3.7.1.min.js"></script>
+    <script src="./Scripts/jquery-ui-1.14.1.min.js"></script>
+    <script src="./Scripts/knockout-3.5.1.js"></script>
     <!-- data-main attribute tells require.js to load
              scripts/main.js after require.js loads. -->
     <!--<script data-main="Scripts/main" src="Scripts/require.js"></script>-->
@@ -47,14 +55,11 @@
                 <th>answer</th>
             </tr>
             <tr class="tablerow">
-                <td> <input type="number" id="box4" data-bind="value: in1" /></td>
+                <td> 
+                    <input type="number" id="box4" data-bind="value:in1" />
+                </td>
                 <td>
-                    <select id="2box" >
-
-                        <option value="+">+</option>
-                        <option value="*">*</option>
-                        <option value="/">/</option>
-                        <option value="-">-</option>
+                    <select id="2box" data-bind="options: listoperation, value:selectedoperation" >
                     </select>
                 </td>
                 <td><input type="number" id="1box" data-bind="value:in2" /></td>
@@ -73,6 +78,6 @@
         <!--Input text boxes, select-option and buttons go here-->
 
     </panel>
-    <script src="index.js"></script>
+    <script src="/index.js"></script>
 </body>
 </html>
